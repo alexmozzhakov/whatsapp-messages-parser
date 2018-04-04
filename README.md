@@ -1,5 +1,5 @@
-# whatsapp-messages-parser
-Parse whatsapp messages .txt log to JSON format
+# WhatsApp messages parser
+Parse WhatsApp messages .txt log to JSON format
 
 
 ```
