@@ -21,20 +21,20 @@ describe('Parsed test data', function(){
 
   it('should have the correct amount of total messages', function() {
     assert(current);
-    assert.equal(current.length, 6);
+    assert.equal(current.length, 4);
   });
 
   it('should have correct sender for messages', function() {
-    assert(current[5]);
-    assert.equal(current[5].sender, 'John Lennon');
+    assert(current[1]);
+    assert.equal(current[1].sender, 'Alexey');
   });
 
   it('should have correct message', function() {
-    assert.equal(current[4].message, 'Dope.');
+    assert.equal(current[1].message, 'Hello world');
   });
 
   it('should have labeled system messages correctly', function() {
-    assert.equal(current[0].sender,'system');
+    assert.equal(current[0].sender,'Group');
   });
 
   it('should have a date', function() {
@@ -42,7 +42,7 @@ describe('Parsed test data', function(){
   });
 
   it('should have catenated multiline messages into one message with line breaks', function() {
-    assert.equal(current[2].message, "I've got an idea for a song:\nDay after day,\nAlone on the hill\nA man with a foolish grin is keeping perfectly still");
+    assert.equal(current[2].message, "Want a little mess?\nfollow me");
   });
 
 });

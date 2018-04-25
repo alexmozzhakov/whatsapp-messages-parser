@@ -1,7 +1,7 @@
 {
   "name": "whatsapp-messages-parser",
-  "version": "0.1.0",
-  "description": "parse WhatsApp logs",
+  "version": "0.2.0",
+  "description": "parses WhatsApp logs",
   "main": "index.js",
   "keywords": [
     "whatsapp",
@@ -16,15 +16,20 @@
     "index.js"
   ],
   "author": {
-    "name": "Matias Kaskimies",
+    "name": "Matias Kaskimies (updated by Alexey Mozzhakov)",
     "email": ""
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mkaski/whatsapp-messages-parser/issues"
+    "url": "https://github.com/alexmozzhakov/whatsapp-messages-parser/issues"
   },
   "homepage": "https://github.com/mkaski/whatsapp-messages-parser/",
-  "dependencies": {},
+  "dependencies": {
+    "command-line-args": "^5.0.1",
+    "command-line-usage": "^4.1.0",
+    "npm": "^6.0.0",
+    "yargs": "^11.0.0"
+  },
   "devDependencies": {
     "mocha": "latest"
   }

@@ -1,5 +1,6 @@
 'use strict';
 
+
 var fs = require('fs');
 var readline = require('readline');
 
@@ -22,7 +23,7 @@ function parseFile(filename, callback){
   });
 
   // regex for a valid message line
-  var messageRegex = /:+.*- .*/g;
+  var messageRegex = /:+.*: .*/g;
 
   rl.on('line', function(line){
 
@@ -49,19 +50,10 @@ function parseLine(line) {
   }
 
   // Substring details based on separators
-  var date = line.substr(0,line.indexOf(' -'));
-  var sender, message;
-
-  // If there is no sender, label message sender as system
-  if (line.indexOf(': ') === -1) {
-    sender = 'system';
-    message = line.substr(line.indexOf('- ')+2);
-  }
-  // Else substring sender and message
-  else {
-    sender = line.substr(line.indexOf('- ')+2, line.indexOf(': ')-line.indexOf('- ')-2);
-    message = line.substr(line.indexOf(': ')+2);
-  }
+  const date =    line.substr(1, line.indexOf('] ') - 1);
+  const sender =  line.substr(line.indexOf('] ') + 2, line.indexOf(': ') - line.indexOf('] ') - 2);
+  const message = line.substr(line.indexOf(': ') + 2);
+  
 
   return {
     date: date,
